@@ -10,8 +10,7 @@ AkkermanFunction(m,n);
 
 void AkkermanFunction(int m, int n)
 {
-    Console.Write($"\nA({m},{n}) = {Akkerman(m, n)}\n");
-    Console.WriteLine();
+    Console.WriteLine($"\nA({m},{n}) = {Akkerman(m, n)}\n");
 }
 
 int Akkerman(int m, int n)
