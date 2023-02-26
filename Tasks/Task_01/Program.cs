@@ -13,31 +13,21 @@ while (m1 <= n)
     m1++;
 }
 
-if (count % 10 != 0)
+m1 = m;
+int [] matrix = new int [count];
+for (int i = 0; i < matrix.Length; i++)
 {
-    while (count % 10 > 0) count++;
-}
-
-int m2 = m;
-int [,] matrix = new int [count/10, 10];
-for (int i = 0; i < matrix.GetLength(0); i++)
-{
-    for (int j = 0; j < matrix.GetLength(1); j++)
+    if (m1 <= n)
     {
-        if (m2 <= n) matrix[i, j] = m2;
-        else matrix[i, j] = 0;
-        m2++;
+        matrix[i] = m1;
     }
+    m1++;
 }
 
-Console.WriteLine($"\nПоследовательность натуральных чисел от {m} до {n}:");
-
-for (int i = 0; i < matrix.GetLength(0); i++)
+Console.Write($"\nПоследовательность натуральных чисел от {m} до {n}:");
+for (int i = 0; i < matrix.Length; i++)
 {
-    for (int j = 0; j < matrix.GetLength(1); j++)
-    {
-        if (matrix[i, j] == 0 && i != 0 && j != 0) break;
-        Console.Write($"{matrix[i, j]}\t");
-    }
-    Console.WriteLine();
+    if (i % 13 == 0) Console.WriteLine();
+    Console.Write($"{matrix[i]}\t");
 }
+Console.WriteLine("\n");
